@@ -10,6 +10,22 @@ const d = document,/** --------------------------------- obtengo todos los eleme
 
 
 
+/**----------------------------------------------------- variables para operar.*/
+
+let $operadorPulsado = false,// si es false no imprime operadores.
+  $valorNumero = "",//-------------almacena el valor del nº pulsado.
+  primerNum,
+  $ope;//---------------------almacena el valor del operador pulsado.
+
+
+let aOperando, //------ almacena la primer cifra, antes de pulsar un operando.
+  bOperando, //------ almacena la segunda cifra, después de pulsar un operando.
+  operacion ="";//--- almacena el operandor de una operación matemática.
+
+
+
+
+
 /**--------------------------------------------------------------------------evento a cada uno de los numeros.*/
 botones.forEach( boton => {
 
@@ -26,6 +42,56 @@ botones.forEach( boton => {
   });
 
 });
+
+
+
+
+
+function limpiar (){
+
+  display.innerHTML = "";
+  displayCero.innerHTML = "";
+}
+
+
+function resetear(){
+
+  display.innerHTML = "";
+  aOperando = 0;
+  bOperando = 0;
+  operacion = 0;
+}
+
+
+/** Toma el tipo de operación, y dos cifras para hacer una operación.
+ En um primer display muestra las operaciones que se van haciendo con su resustado.
+ En un segundo display muestra el resultado final.
+ */
+function resolver(){
+
+  let res = 0;
+  switch (operacion){
+
+    case '+':
+      res = parseFloat(aOperando) + parseFloat(bOperando);
+      break;
+    case '-':
+      res = parseFloat(aOperando) - parseFloat(bOperando);
+      break;
+    case '*':
+      res = parseFloat(aOperando) * parseFloat(bOperando);
+      break;
+    case '/':
+      res = ( parseFloat(aOperando) / parseFloat(bOperando) ).toFixed(3);
+      break;
+
+  }
+
+  resetear();
+  display.innerHTML = res;
+  displayCero.innerHTML += res;
+  $operadorPulsado  = true;
+}
 
 
 
