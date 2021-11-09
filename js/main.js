@@ -45,6 +45,63 @@ botones.forEach( boton => {
 
 
 
+/**-------------------------------------------------------------------------evento a cada uno de los operadores.*/
+operadoradores.forEach( operador => {
+
+  operador.addEventListener( 'click', e => {
+
+    $numPulsado = 0;
+    $ope = operador.innerHTML;
+
+    if ($operadorPulsado  === true){
+
+      displayCero.innerHTML += $ope;/** muestra nº y operadores que el usuario va marcando en displayCero.*/
+    }
+
+    $operadorPulsado  = false;/** ---- para que no imprima operadores seguidos */
+
+
+    switch ($ope){
+
+      case '+':
+        aOperando = display.innerHTML;
+        operacion = "+";
+        display.innerHTML = "";
+        break;
+
+      case '-':
+        aOperando = display.innerHTML;
+        operacion = "-";
+        display.innerHTML = "";
+        break;
+
+      case '*':
+        aOperando = display.innerHTML;
+        operacion = "*";
+        display.innerHTML = "";
+        break;
+
+      case '/':
+        aOperando = display.innerHTML;
+        operacion = "/";
+        display.innerHTML = "";
+        break;
+
+      case '=':
+        bOperando = display.innerHTML;
+        resolver();
+        break;
+
+      case 'C':
+        limpiar();
+        $operadorPulsado  = true;
+        break;
+
+    }
+  })
+
+})
+
 
 
 function limpiar (){
