@@ -104,6 +104,57 @@ operadoradores.forEach( operador => {
 
 
 
+
+/** --------------------------------------------------------------EVENTO      DECORATIVO.*/
+cuartoMen.addEventListener('click', (e) => {
+
+  displayCero.innerHTML = "------------- " +new Date().getDate()+" /" +new Date().getMonth()+ " /"
+    +new Date().getFullYear()+" -- " +new Date().getHours()+ " :" +new Date().getMinutes()+
+    " -------------";
+  display.innerHTML = " C U A R T O   M E N G U A N T E ";
+
+  setTimeout(function(){
+
+    displayCero.innerHTML = "";
+    display.innerHTML = "";
+  }, 4000);
+
+})
+
+
+/** --------------------------------------------------------------EVENTO      DECORATIVO.*/
+trabajando.addEventListener('click', (e) =>{
+
+  displayCero.innerHTML = " ---------------- E S T A M O S ----------------";
+  display.innerHTML = "------- T R A B A J A N D O -------";
+
+  setTimeout(function(){
+
+    displayCero.innerHTML = "";
+    display.innerHTML = "";
+  }, 3000);
+
+});
+
+
+/** --------------------------------------------------------------EVENTO      DECORATIVO.*/
+madeInSpain.addEventListener('click', (e) => {
+
+  displayCero.innerText = '----- AV. DEL ROMERAL, 125 24191 -----' ;
+  display.innerHTML = '---- VILLABALTER  (SPAIN) ----';
+
+  setTimeout(function(){
+
+    displayCero.innerHTML = "";
+    display.innerHTML = "";
+  }, 4000);
+
+});
+
+
+
+
+
 function limpiar (){
 
   display.innerHTML = "";
