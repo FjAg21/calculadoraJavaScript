@@ -23,7 +23,9 @@ let aOperando, //------ almacena la primer cifra, antes de pulsar un operando.
   operacion ="";//--- almacena el operandor de una operación matemática.
 
 
-
+  displayCero.innerHTML = "0";
+  display.innerHTML = "0";
+  let  con = 0;
 
 
 /**--------------------------------------------------------------------------evento a cada uno de los numeros.*/
@@ -31,6 +33,11 @@ botones.forEach( boton => {
 
   boton.addEventListener( 'click', (e) => {
 
+    if (con === 0){
+      displayCero.innerHTML = "";
+      display.innerHTML = "";
+    }
+    con++;
 
     $operadorPulsado  = true;/** true permite imprimir operadores en displayCero.*/
     $valorNumero = boton.innerHTML;
@@ -157,8 +164,9 @@ madeInSpain.addEventListener('click', (e) => {
 
 function limpiar (){
 
-  display.innerHTML = "";
-  displayCero.innerHTML = "";
+  display.innerHTML = "0";
+  displayCero.innerHTML = "0";
+  con = 0;
 }
 
 
